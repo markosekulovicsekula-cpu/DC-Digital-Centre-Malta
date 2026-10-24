@@ -455,6 +455,14 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 .about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
 .prose p { font-size: 1.05rem; max-width: 65ch; }
 .ph-block { margin-bottom: .6em; }
+.about__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.why-card--white { background: var(--surface); }
+.demo-room { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; padding: clamp(24px, 4vw, 40px); border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(120deg, #fff 0%, #fff4ee 100%); }
+.demo-room h2 { margin-bottom: .3em; }
+.demo-room p { margin: 0; color: var(--muted); max-width: 60ch; }
+.demo-room__icons { display: flex; gap: 10px; }
+.demo-room__icons span { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 14px; background: var(--ink); color: var(--accent); }
+@media (max-width: 800px) { .demo-room { grid-template-columns: 1fr; } .demo-room .btn { justify-self: start; } }
 .about__facts { padding: 26px; border-radius: var(--radius); background: var(--surface-2); }
 .about__facts h2 { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
 .about__facts dl { margin: 0; display: grid; gap: 12px; }

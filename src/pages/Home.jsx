@@ -3,17 +3,17 @@ import { products, categories } from '../data/products.js';
 import { useI18n } from '../i18n/index.jsx';
 import useSeo from '../hooks/useSeo.js';
 import ProductCard from '../components/ProductCard.jsx';
-import { Arrow, Box, Chat, Compare, Laser, Wrench, Printer, Press, Flame, Layers, Badge, Store } from '../components/Icons.jsx';
+import { Arrow, Box, Compare, Laser, Wrench, Printer, Press, Flame, Layers, Badge, Store } from '../components/Icons.jsx';
 
 const categoryIcons = { lasers: Laser, printers: Printer, 'heat-presses': Press, metalfab: Flame, retail: Store, accessories: Box, materials: Layers };
 
 // Keep these points factual — do not add warranty, delivery or support
 // promises that have not been confirmed.
 const reasons = [
-  { icon: Badge, title: 'Official xTool partner', text: 'The full xTool range, from a partner based in Msida.' },
-  { icon: Chat, title: 'Talk to someone local', text: 'Ask questions in person, by phone or by email before you decide.' },
+  { icon: Badge, title: 'Official xTool partner', text: 'xTool machines and accessories from a partner based in Msida.' },
+  { icon: Store, title: 'Demo room in Msida', text: 'See the machines working and test your own materials before you buy.' },
   { icon: Compare, title: 'Help choosing', text: 'Tell us your materials and projects and we will suggest the right machine and accessories.' },
-  { icon: Wrench, title: 'Getting started', text: 'Ask us about setup, materials and first steps with your new machine.' },
+  { icon: Wrench, title: 'Service & repairs', text: 'We service large-format printers, laser machines, CNC machines and 3D printers.' },
 ];
 
 const uses = [

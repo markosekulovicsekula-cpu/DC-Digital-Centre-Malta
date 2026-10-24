@@ -62,8 +62,10 @@ const en = {
 
   'form.name': 'Full name',
   'form.email': 'Email',
-  'form.product': 'Product of interest',
+  'form.product': 'Product or topic',
   'form.productNone': 'General enquiry',
+  'form.topicService': 'Service / repair request',
+  'form.topicDemo': 'Demo room visit',
   'form.message': 'Message',
   'form.submit': 'Send enquiry',
   'form.required': 'required',

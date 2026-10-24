@@ -11,7 +11,8 @@ export default function Contact() {
   const { t } = useI18n();
   useSeo('Contact & quotes', 'Contact DC Digital Centre Malta for xTool product quotes, advice and availability in Malta.');
   const [params] = useSearchParams();
-  const productSlug = getProduct(params.get('product') ?? '') ? params.get('product') : '';
+  const topic = ['service', 'demo'].includes(params.get('topic')) ? params.get('topic') : '';
+  const productSlug = getProduct(params.get('product') ?? '') ? params.get('product') : topic;
   const { contact } = site;
 
   return (

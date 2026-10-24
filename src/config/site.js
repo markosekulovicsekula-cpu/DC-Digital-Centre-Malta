@@ -7,7 +7,7 @@
 export const site = {
   name: 'DC Digital Centre Malta',
   shortName: 'DC Malta',
-  tagline: 'Official xTool partner in Malta — lasers, printers, heat presses and MetalFab.',
+  tagline: 'Official xTool partner in Malta. Demo room in Msida and service for large-format printers, laser, CNC and 3D printing equipment.',
   url: 'https://dcmt.eu',
   defaultLanguage: 'en',
 
