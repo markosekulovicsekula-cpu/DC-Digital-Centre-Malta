@@ -16,22 +16,22 @@ export const site = {
   authorisedResellerConfirmed: false,
 
   contact: {
-    // TODO: replace with your real contact details, then set isPlaceholder: false
-    isPlaceholder: true,
-    phone: '+356 0000 0000',
-    phoneHref: 'tel:+35600000000',
-    email: 'info@example.com',
+    phone: '+356 9947 1937',
+    phoneHref: 'tel:+35699471937',
+    email: 'info@dcmt.eu',
+    // TODO: replace with your real address, then set addressIsPlaceholder: false
     address: 'Street name, Town, Malta',
+    addressIsPlaceholder: true,
+    // TODO: confirm which days these hours apply to (e.g. 'Mon – Fri').
     openingHours: [
-      { days: 'Mon – Fri', hours: '09:00 – 17:00' },
-      { days: 'Saturday', hours: '09:00 – 13:00' },
-      { days: 'Sunday', hours: 'Closed' },
+      { days: 'Opening hours', hours: '09:00 – 17:00' },
     ],
     // TODO: optional Google Maps link to your shop
     mapUrl: '',
   },
 
-  // TODO: add your real social profiles. Empty strings are NOT rendered.
+  // Social profiles are not active yet. Add the URL when each one goes live;
+  // empty strings are NOT rendered.
   social: {
     facebook: '',
     instagram: '',

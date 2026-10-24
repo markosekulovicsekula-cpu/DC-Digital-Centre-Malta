@@ -37,11 +37,11 @@ export default function Footer() {
           </ul>
         </div>
         <address>
-          <h2 className="footer__h">Contact {contact.isPlaceholder && <PlaceholderTag />}</h2>
+          <h2 className="footer__h">Contact</h2>
           <ul>
             <li><a href={contact.phoneHref}>{contact.phone}</a></li>
             <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-            <li>{contact.address}</li>
+            <li>{contact.address} {contact.addressIsPlaceholder && <PlaceholderTag />}</li>
           </ul>
         </address>
       </div>

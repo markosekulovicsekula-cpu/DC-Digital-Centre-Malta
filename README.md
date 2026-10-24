@@ -15,7 +15,7 @@ Hosting note: this is a single-page app, so the host must serve `index.html` for
 ## What to replace before going live
 | What | Where |
 |---|---|
-| Phone, email, address, opening hours, map link (then set `isPlaceholder: false`) | `src/config/site.js` → `contact` |
+| Address, opening days, map link (then set `addressIsPlaceholder: false`) | `src/config/site.js` → `contact` |
 | Social media links (empty = hidden) | `src/config/site.js` → `social` |
 | Form backend URL (empty = demo mode, nothing is sent) | `src/config/site.js` → `formEndpoint` |
 | Authorised-reseller status (only `true` with written confirmation from xTool) | `src/config/site.js` → `authorisedResellerConfirmed` |

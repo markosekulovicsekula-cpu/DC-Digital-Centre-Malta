@@ -28,16 +28,12 @@ export default function Contact() {
             <EnquiryForm defaultProduct={productSlug} />
           </div>
           <aside className="contact__info" aria-label="Contact details">
-            {contact.isPlaceholder && (
-              <p className="note note--warn">
-                <PlaceholderTag /> These contact details are placeholders. Edit <code>src/config/site.js</code>.
-              </p>
-            )}
             <ul className="info-list">
               <li><Phone /><div><span>Phone</span><a href={contact.phoneHref}>{contact.phone}</a></div></li>
               <li><Mail /><div><span>Email</span><a href={`mailto:${contact.email}`}>{contact.email}</a></div></li>
               <li><Pin /><div><span>Address</span>
                 {contact.mapUrl ? <a href={contact.mapUrl} target="_blank" rel="noopener noreferrer">{contact.address}</a> : <p>{contact.address}</p>}
+                {contact.addressIsPlaceholder && <PlaceholderTag />}
               </div></li>
               <li><Clock /><div><span>Opening hours</span>
                 <dl className="hours">
