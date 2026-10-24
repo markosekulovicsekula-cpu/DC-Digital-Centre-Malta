@@ -27,7 +27,7 @@ const en = {
   'home.categoriesTitle': 'Shop by category',
   'home.featuredTitle': 'Featured products',
   'home.whyTitle': 'Why buy from DC Digital Centre Malta',
-  'home.useTitle': 'What you can create',
+  'home.useTitle': 'Discover what you can create',
   'home.ctaBandTitle': 'Not sure which machine fits your work?',
   'home.ctaBandText': 'Tell us what you want to make and which materials you use — we will reply with suitable options.',
 
