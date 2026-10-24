@@ -32,4 +32,4 @@ Copy `src/i18n/en.js` to e.g. `mt.js` or `sr.js`, translate the values, and regi
 ## Domain (dcmt.eu)
 The site URL is set in `src/config/site.js` (`url`) and used for canonical links, Open Graph tags,
 `public/robots.txt` and `public/sitemap.xml` (regenerated on every `npm run build`).
-`public/_redirects` handles routing on Netlify. On Vercel or Cloudflare Pages this file is ignored and not needed.
+`netlify.toml` holds the Netlify build settings and the single-page-app redirect.
