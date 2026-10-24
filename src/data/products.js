@@ -20,7 +20,7 @@ import productImages from './productImages.js';
 const XTOOL_EU = 'https://www.xtool.eu';
 const official = (handle) => (handle ? `${XTOOL_EU}/products/${handle}` : XTOOL_EU);
 
-export const categories = [
+const allCategories = [
   {
     id: 'lasers',
     label: 'Laser engravers & cutters',
@@ -43,7 +43,7 @@ export const categories = [
     id: 'metalfab',
     label: 'MetalFab laser welding',
     short: 'MetalFab',
-    blurb: 'Laser welding, cutting and cleaning for metal workshops.',
+    blurb: 'Laser welding and CNC metal cutting for workshops and fabricators.',
   },
   {
     id: 'retail',
@@ -55,7 +55,7 @@ export const categories = [
     id: 'accessories',
     label: 'Accessories & upgrades',
     short: 'Accessories',
-    blurb: 'Rotaries, laser modules, air purifiers, conveyors, work surfaces and safety gear.',
+    blurb: 'Rotaries, air purifiers, conveyors, stands and add-on modules for xTool lasers, printers and heat presses.',
   },
   {
     id: 'materials',
@@ -65,7 +65,7 @@ export const categories = [
   },
 ];
 
-export const machineTypes = [
+const allMachineTypes = [
   { id: 'new', label: 'New releases', category: 'lasers' },
   { id: 'co2', label: 'CO₂ lasers', category: 'lasers' },
   { id: 'galvo', label: 'Fiber, MOPA & UV (portable)', category: 'lasers' },
@@ -121,7 +121,7 @@ const item = (slug, name, category, type, short, specs, extra = {}) => ({
   ...extra,
 });
 
-export const products = [
+const allProducts = [
   // ---------------------------------------------------------------- LASERS
   item('xtool-x1', 'xTool X1', 'lasers', 'new',
     'xTool’s next-generation, upgradable laser platform for creators and online sellers.',
@@ -563,6 +563,23 @@ export const products = [
     'HTV and sublimation supplies for heat press work.',
     [['For', 'Mini Press, WonderPress']]),
 ];
+
+// ---------------------------------------------------------------------------
+//  WHAT IS SHOWN ON THE SITE
+//  For now only products that have photos are shown, and the materials
+//  category is hidden. Entries stay above so they can be switched back on:
+//  add photos in productImages.js, or remove a category from HIDDEN_CATEGORIES.
+// ---------------------------------------------------------------------------
+const HIDDEN_CATEGORIES = ['materials'];
+
+const visible = (p) => p.images.length > 0 && !HIDDEN_CATEGORIES.includes(p.category);
+
+export const products = allProducts
+  .filter(visible)
+  .map((p) => ({ ...p, related: p.related.filter((slug) => allProducts.some((q) => q.slug === slug && visible(q))) }));
+
+export const categories = allCategories.filter((c) => products.some((p) => p.category === c.id));
+export const machineTypes = allMachineTypes.filter((t) => products.some((p) => p.type === t.id));
 
 export const getProduct = (slug) => products.find((p) => p.slug === slug);
 export const getType = (id) => machineTypes.find((t) => t.id === id);

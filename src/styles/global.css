@@ -228,6 +228,8 @@ main:focus { outline: none; }
 
 /* Categories */
 .cat-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cat-grid > li { display: flex; }
+.cat-grid .cat-card { flex: 1; }
 .cat-card {
   position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px;
   min-height: 200px; padding: 26px; border-radius: var(--radius);

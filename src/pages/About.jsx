@@ -25,7 +25,7 @@ export default function About() {
             <p className="ph-block"><PlaceholderTag>Replace text</PlaceholderTag></p>
             <p>
               DC Digital Centre Malta is a local business that offers the complete xTool range — laser engravers
-              and cutters, UV and DTF printers, heat presses, MetalFab laser welding, accessories and materials — to
+              and cutters, UV and DTF printers, heat presses, MetalFab laser welding, retail solutions and accessories — to
               customers in Malta. Our aim is to make it easier for makers, hobbyists, schools and
               small businesses to choose and buy the right equipment without having to order blindly from abroad.
             </p>

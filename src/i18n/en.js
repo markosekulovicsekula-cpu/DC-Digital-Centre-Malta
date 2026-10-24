@@ -21,7 +21,7 @@ const en = {
   'home.eyebrow': 'Official xTool partner in Malta',
   'home.title': 'The full xTool range, from your local partner in Malta.',
   'home.lead':
-    'Laser engravers and cutters, UV and DTF printers, heat presses, MetalFab laser welding, accessories and materials. Talk to us in Msida, get advice for your projects and request a quote.',
+    'Laser engravers and cutters, UV and DTF printers, heat presses, MetalFab laser welding, retail solutions and accessories. Talk to us in Msida, get advice for your projects and request a quote.',
   'home.ctaProducts': 'View products',
   'home.ctaQuote': 'Request a quote',
   'home.categoriesTitle': 'Shop by category',
@@ -34,7 +34,7 @@ const en = {
   'home.ctaBandText': 'Tell us what you want to make and which materials you use — we will reply with suitable options.',
 
   'products.title': 'xTool products',
-  'products.lead': 'The complete xTool range: lasers, printers, heat presses, MetalFab, accessories and materials. Send us a request for prices and availability.',
+  'products.lead': 'xTool lasers, printers, heat presses, MetalFab, retail solutions and accessories. Send us a request for prices and availability.',
   'products.search': 'Search products',
   'products.searchPlaceholder': 'Search by name or use…',
   'products.category': 'Category',

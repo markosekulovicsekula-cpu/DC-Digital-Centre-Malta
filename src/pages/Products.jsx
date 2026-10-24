@@ -11,7 +11,7 @@ const PREVIEW_COUNT = 3;
 
 export default function Products() {
   const { t } = useI18n();
-  useSeo('xTool Products', 'The complete xTool range in Malta: laser engravers and cutters, UV and DTF printers, heat presses, MetalFab laser welders, accessories and materials.');
+  useSeo('xTool Products', 'xTool in Malta: laser engravers and cutters, UV and DTF printers, heat presses, MetalFab laser welders, retail solutions and accessories.');
   const [params, setParams] = useSearchParams();
   const q = params.get('q') ?? '';
   const category = params.get('category') ?? '';

@@ -19,3 +19,4 @@ export const Press = (p) => (<svg {...base} {...p}><rect x="5" y="3" width="14" 
 export const Flame = (p) => (<svg {...base} {...p}><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1 2.6 2 3 0-3-1-5.5.5-8z" /></svg>);
 export const Layers = (p) => (<svg {...base} {...p}><path d="m12 3 9 5-9 5-9-5z" /><path d="m3 13 9 5 9-5" /></svg>);
 export const Badge = (p) => (<svg {...base} {...p}><circle cx="12" cy="9" r="6" /><path d="m9 14-2 7 5-3 5 3-2-7" /><path d="m9.5 9 1.7 1.7L14.5 7.5" /></svg>);
+export const Store = (p) => (<svg {...base} {...p}><path d="M4 9l1.5-5h13L20 9" /><path d="M4 9h16v2a2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0z" /><path d="M5 12v8h14v-8M10 20v-5h4v5" /></svg>);

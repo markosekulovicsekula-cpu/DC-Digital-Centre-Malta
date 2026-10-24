@@ -3,9 +3,9 @@ import { products, categories } from '../data/products.js';
 import { useI18n } from '../i18n/index.jsx';
 import useSeo from '../hooks/useSeo.js';
 import ProductCard from '../components/ProductCard.jsx';
-import { Arrow, Box, Chat, Compare, Laser, Wrench, Printer, Press, Flame, Layers, Badge } from '../components/Icons.jsx';
+import { Arrow, Box, Chat, Compare, Laser, Wrench, Printer, Press, Flame, Layers, Badge, Store } from '../components/Icons.jsx';
 
-const categoryIcons = { lasers: Laser, printers: Printer, 'heat-presses': Press, metalfab: Flame, accessories: Box, materials: Layers };
+const categoryIcons = { lasers: Laser, printers: Printer, 'heat-presses': Press, metalfab: Flame, retail: Store, accessories: Box, materials: Layers };
 
 // Keep these points factual — do not add warranty, delivery or support
 // promises that have not been confirmed.
@@ -20,7 +20,7 @@ const uses = [
   { title: 'Engraving & marking', text: 'Glass, metal, wood and leather — from fine UV marking to deep engraving.', img: '/products/xtool-f2-ultra-uv-3.webp', to: '/products?category=lasers' },
   { title: 'Cutting', text: 'Clean shapes from plywood, acrylic, card and fabric for signs, models and decor.', img: '/products/xtool-p3-4.webp', to: '/products/xtool-p3' },
   { title: 'Printing & apparel', text: 'UV printing on objects and DTF transfers for T-shirts and merchandise.', img: '/products/xtool-o1-6.webp', to: '/products?category=printers' },
-  { title: 'Metal fabrication', text: 'Laser welding, cutting and cleaning for metal workshops.', img: '/products/xtool-metalfab-welder-cutter-7.webp', to: '/products?category=metalfab' },
+  { title: 'Metal fabrication', text: 'Laser welding and CNC metal cutting for workshops.', img: '/products/xtool-metalfab-welder-cutter-7.webp', to: '/products?category=metalfab' },
 ];
 
 export default function Home() {
@@ -58,7 +58,7 @@ export default function Home() {
             <Link to="/products" className="link-arrow">{t('common.viewAll')} <Arrow width={16} height={16} /></Link>
           </div>
           <ul className="cat-grid">
-            {categories.filter((c) => c.id !== 'retail').map((c) => (
+            {categories.map((c) => (
               <li key={c.id}>
                 <Link to={`/products?category=${c.id}`} className={`cat-card cat-card--${c.id}`}>
                   <span className="cat-card__icon">{(() => { const Icon = categoryIcons[c.id] ?? Box; return <Icon width={28} height={28} />; })()}</span>
