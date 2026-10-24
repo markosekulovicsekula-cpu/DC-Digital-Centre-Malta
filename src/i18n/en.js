@@ -10,7 +10,7 @@ const en = {
   'nav.menu': 'Menu',
   'nav.skip': 'Skip to content',
 
-  'common.contactForPrice': 'Contact us for price',
+  'common.contactForPrice': 'Price on request',
   'common.learnMore': 'Learn more',
   'common.requestQuote': 'Request a quote',
   'common.placeholder': 'Placeholder',
@@ -18,14 +18,14 @@ const en = {
   'common.viewAll': 'View all products',
 
   // TODO: review the marketing copy below and adapt it to your business.
-  'home.eyebrow': 'xTool products in Malta',
-  'home.title': 'Make, mark and cut — with xTool, from a local Maltese shop.',
+  'home.eyebrow': 'Official xTool partner in Malta',
+  'home.title': 'The full xTool range, from your local partner in Malta.',
   'home.lead':
-    'DC Digital Centre Malta helps makers, studios and small businesses in Malta choose the right xTool laser engraver, cutter or accessory, and talk to someone local before they buy.',
+    'Laser engravers and cutters, UV and DTF printers, heat presses, MetalFab laser welding, accessories and materials. Talk to us in Msida, get advice for your projects and request a quote.',
   'home.ctaProducts': 'View products',
   'home.ctaQuote': 'Request a quote',
   'home.categoriesTitle': 'Shop by category',
-  'home.featuredTitle': 'Featured machines',
+  'home.featuredTitle': 'Featured products',
   'home.whyTitle': 'Why buy from DC Digital Centre Malta',
   'home.useTitle': 'What you can make',
   'home.useLead':
@@ -34,7 +34,7 @@ const en = {
   'home.ctaBandText': 'Tell us what you want to make and which materials you use — we will reply with suitable options.',
 
   'products.title': 'xTool products',
-  'products.lead': 'Laser machines and accessories. Prices on request unless shown.',
+  'products.lead': 'The complete xTool range: lasers, printers, heat presses, MetalFab, accessories and materials. Send us a request for prices and availability.',
   'products.search': 'Search products',
   'products.searchPlaceholder': 'Search by name or use…',
   'products.category': 'Category',
@@ -43,15 +43,16 @@ const en = {
   'products.results': '{n} products',
   'products.noResults': 'No products match your search.',
   'products.reset': 'Clear filters',
+  'products.showAll': 'Show all {n}',
 
   'product.specs': 'Key specifications',
   'product.inTheBox': 'In the box',
-  'product.inTheBoxUnknown': 'Packing list to be confirmed — ask us for details.',
+  'product.inTheBoxUnknown': 'Ask us for the full packing list and available bundles.',
   'product.related': 'Related accessories & machines',
   'product.enquire': 'Enquire about this product',
   'product.notFound': 'Product not found',
   'product.back': 'Back to products',
-  'product.official': 'Official specifications on the xTool website',
+  'product.official': 'Full specifications on xtool.eu',
   'product.verifyNote':
     'Specifications on this page are a summary to be verified. Always confirm against official xTool documentation.',
 
@@ -81,7 +82,7 @@ const en = {
   'footer.disclaimer':
     'xTool and related product names are trademarks of their respective owner. DC Digital Centre Malta is an independent seller of xTool products.',
   'footer.disclaimerAuthorised':
-    'xTool and related product names are trademarks of their respective owner. DC Digital Centre Malta is an authorised xTool reseller.',
+    'xTool and related product names are trademarks of their respective owner. DC Digital Centre Malta is an official xTool partner in Malta.',
 };
 
 export default en;

@@ -51,7 +51,7 @@ export default function Footer() {
       <div className="container footer__bottom">
         <p>© {new Date().getFullYear()} {site.name}</p>
         <p className="footer__legal">
-          {site.authorisedResellerConfirmed ? t('footer.disclaimerAuthorised') : t('footer.disclaimer')}
+          {site.officialPartner ? t('footer.disclaimerAuthorised') : t('footer.disclaimer')}
         </p>
       </div>
     </footer>

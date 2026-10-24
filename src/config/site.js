@@ -7,14 +7,13 @@
 export const site = {
   name: 'DC Digital Centre Malta',
   shortName: 'DC Malta',
-  tagline: 'xTool laser engravers & cutters, available locally in Malta',
+  tagline: 'Official xTool partner in Malta — lasers, printers, heat presses and MetalFab.',
   url: 'https://dcmt.eu',
   defaultLanguage: 'en',
 
-  // TODO: Only set this to true once you have WRITTEN confirmation from xTool
-  // that you are an authorised reseller / distributor. While false, the site
-  // describes you only as a "local seller of xTool products".
-  authorisedResellerConfirmed: false,
+  // Official xTool partner status (confirmed by the business owner).
+  // Set to false to describe the business only as a "seller of xTool products".
+  officialPartner: true,
 
   contact: {
     phone: '+356 9947 1937',
@@ -47,7 +46,7 @@ export const site = {
   formEndpoint: '',
 
   // Official manufacturer site – used for "official specifications" links.
-  manufacturerUrl: 'https://www.xtool.com/',
+  manufacturerUrl: 'https://www.xtool.eu/',
 };
 
 export const nav = [

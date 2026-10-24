@@ -19,7 +19,7 @@ Hosting note: this is a single-page app, so the host must serve `index.html` for
 | Social media links (empty = hidden) | `src/config/site.js` → `social` |
 | Form backend (`netlify`, `endpoint` or `demo`) | `src/config/site.js` → `formProvider` |
 | Authorised-reseller status (only `true` with written confirmation from xTool) | `src/config/site.js` → `authorisedResellerConfirmed` |
-| Products, descriptions, specs, packing list, prices, related items | `src/data/products.js` (set `specsVerified: true` once checked) |
+| Products, descriptions, specs, packing list, prices (`null` = "Price on request"), related items | `src/data/products.js` |
 | Product images (files in `public/products/`, paths in `images`) | `src/data/products.js` |
 | Logo | `src/components/Logo.jsx`, `public/favicon.svg` |
 | Home page copy, "Why buy" points, application examples | `src/i18n/en.js`, `src/pages/Home.jsx` (`reasons`, `uses`) |

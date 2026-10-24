@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getCategory, getProduct, getType } from '../data/products.js';
-import { site } from '../config/site.js';
 import { useI18n } from '../i18n/index.jsx';
 import useSeo from '../hooks/useSeo.js';
 import ProductImage from '../components/ProductImage.jsx';
@@ -61,7 +60,7 @@ function ProductView({ product }) {
             <p className="pdp__price">{formatPrice(product.price, t)}</p>
             <div className="pdp__ctas">
               <a href="#enquiry" className="btn btn--primary btn--lg">{t('product.enquire')} <Arrow /></a>
-              <a href={site.manufacturerUrl} className="btn btn--ghost btn--lg" target="_blank" rel="noopener noreferrer">
+              <a href={product.officialUrl} className="btn btn--ghost btn--lg" target="_blank" rel="noopener noreferrer">
                 {t('product.official')} <External width={16} height={16} />
                 <span className="sr-only">(opens in a new tab)</span>
               </a>

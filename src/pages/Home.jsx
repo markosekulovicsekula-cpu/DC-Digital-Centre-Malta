@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
-import { products, categories, machineTypes } from '../data/products.js';
+import { products, categories } from '../data/products.js';
 import { useI18n } from '../i18n/index.jsx';
 import useSeo from '../hooks/useSeo.js';
 import ProductCard from '../components/ProductCard.jsx';
-import { Arrow, Box, Chat, Compare, Laser, Wrench } from '../components/Icons.jsx';
+import { Arrow, Box, Chat, Compare, Laser, Wrench, Printer, Press, Flame, Layers, Badge } from '../components/Icons.jsx';
 
-// TODO: adjust these points to what your business actually offers.
-// Keep them factual — do not add warranty, delivery or support promises
-// you have not confirmed.
+const categoryIcons = { lasers: Laser, printers: Printer, 'heat-presses': Press, metalfab: Flame, accessories: Box, materials: Layers };
+
+// Keep these points factual — do not add warranty, delivery or support
+// promises that have not been confirmed.
 const reasons = [
+  { icon: Badge, title: 'Official xTool partner', text: 'The full xTool range, from a partner based in Msida.' },
   { icon: Chat, title: 'Talk to someone local', text: 'Ask questions in person, by phone or by email before you decide.' },
-  { icon: Compare, title: 'Help choosing a machine', text: 'Tell us your materials and projects and we will suggest suitable xTool options.' },
-  { icon: Box, title: 'Machines and accessories', text: 'Enquire about machines and compatible accessories from one place.' },
-  { icon: Wrench, title: 'Getting started', text: 'Ask us about setup and first steps with your new machine.' },
+  { icon: Compare, title: 'Help choosing', text: 'Tell us your materials and projects and we will suggest the right machine and accessories.' },
+  { icon: Wrench, title: 'Getting started', text: 'Ask us about setup, materials and first steps with your new machine.' },
 ];
 
 const uses = [
@@ -74,11 +75,9 @@ export default function Home() {
             {categories.map((c) => (
               <li key={c.id}>
                 <Link to={`/products?category=${c.id}`} className={`cat-card cat-card--${c.id}`}>
-                  <span className="cat-card__icon">{c.id === 'machines' ? <Laser width={28} height={28} /> : <Box width={28} height={28} />}</span>
+                  <span className="cat-card__icon">{(() => { const Icon = categoryIcons[c.id] ?? Box; return <Icon width={28} height={28} />; })()}</span>
                   <span className="cat-card__title">{c.label}</span>
-                  <span className="cat-card__types">
-                    {machineTypes.filter((m) => m.category === c.id).map((m) => m.label).join(' · ')}
-                  </span>
+                  <span className="cat-card__types">{c.blurb}</span>
                   <span className="cat-card__count">{products.filter((p) => p.category === c.id).length} products <Arrow width={16} height={16} /></span>
                 </Link>
               </li>
@@ -91,7 +90,7 @@ export default function Home() {
         <div className="container">
           <div className="section__head">
             <h2 id="feat-title">{t('home.featuredTitle')}</h2>
-            <Link to="/products?category=machines" className="link-arrow">{t('common.viewAll')} <Arrow width={16} height={16} /></Link>
+            <Link to="/products" className="link-arrow">{t('common.viewAll')} <Arrow width={16} height={16} /></Link>
           </div>
           <div className="product-grid">
             {featured.map((p) => <ProductCard key={p.slug} product={p} />)}

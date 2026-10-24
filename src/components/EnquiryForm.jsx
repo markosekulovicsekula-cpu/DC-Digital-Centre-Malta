@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { products } from '../data/products.js';
+import { categories, products } from '../data/products.js';
 import { site } from '../config/site.js';
 import { useI18n } from '../i18n/index.jsx';
 
@@ -108,7 +108,11 @@ export default function EnquiryForm({ defaultProduct = '', compact = false }) {
         <label htmlFor={`${id}-product`}>{t('form.product')}</label>
         <select {...field('product')}>
           <option value="">{t('form.productNone')}</option>
-          {products.map((p) => <option key={p.slug} value={p.slug}>{p.name}</option>)}
+          {categories.map((c) => (
+            <optgroup key={c.id} label={c.label}>
+              {products.filter((p) => p.category === c.id).map((p) => <option key={p.slug} value={p.slug}>{p.name}</option>)}
+            </optgroup>
+          ))}
         </select>
       </div>
       <div className="field">

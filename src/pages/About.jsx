@@ -24,8 +24,9 @@ export default function About() {
             {/* TODO: replace these paragraphs with your real story. */}
             <p className="ph-block"><PlaceholderTag>Replace text</PlaceholderTag></p>
             <p>
-              DC Digital Centre Malta is a local business that offers xTool laser engravers, laser cutters and
-              accessories to customers in Malta. Our aim is to make it easier for makers, hobbyists, schools and
+              DC Digital Centre Malta is a local business that offers the complete xTool range — laser engravers
+              and cutters, UV and DTF printers, heat presses, MetalFab laser welding, accessories and materials — to
+              customers in Malta. Our aim is to make it easier for makers, hobbyists, schools and
               small businesses to choose and buy the right equipment without having to order blindly from abroad.
             </p>
             <p>
@@ -34,8 +35,8 @@ export default function About() {
               suitable machines and accessories.
             </p>
             <p>
-              {site.authorisedResellerConfirmed
-                ? 'DC Digital Centre Malta is an authorised xTool reseller.'
+              {site.officialPartner
+                ? 'DC Digital Centre Malta is an official xTool partner in Malta.'
                 : 'DC Digital Centre Malta is an independent seller of xTool products.'}{' '}
               For full technical documentation, see the{' '}
               <a href={site.manufacturerUrl} target="_blank" rel="noopener noreferrer">official xTool website<span className="sr-only"> (opens in a new tab)</span></a>.
@@ -47,7 +48,8 @@ export default function About() {
             {/* TODO: replace with real facts (year founded, location, team, etc.) */}
             <dl>
               <div><dt>Based in</dt><dd>Msida, Malta</dd></div>
-              <div><dt>Products</dt><dd>xTool machines & accessories</dd></div>
+              <div><dt>Partner status</dt><dd>Official xTool partner</dd></div>
+              <div><dt>Products</dt><dd>Full xTool range</dd></div>
               <div><dt>Founded</dt><dd>[YEAR]</dd></div>
               <div><dt>Showroom</dt><dd>[Yes / By appointment / No]</dd></div>
             </dl>

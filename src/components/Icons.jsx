@@ -14,3 +14,8 @@ export const Wrench = (p) => (<svg {...base} {...p}><path d="M14.7 6.3a4 4 0 0 0
 export const Box = (p) => (<svg {...base} {...p}><path d="M3 7l9-4 9 4v10l-9 4-9-4z" /><path d="M3 7l9 4 9-4M12 11v10" /></svg>);
 export const Laser = (p) => (<svg {...base} {...p}><rect x="4" y="3" width="16" height="7" rx="1.5" /><path d="M12 10v6M8 21h8M12 16l-2 5M12 16l2 5" /></svg>);
 export const External = (p) => (<svg {...base} {...p}><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></svg>);
+export const Printer = (p) => (<svg {...base} {...p}><path d="M7 9V3h10v6" /><rect x="3" y="9" width="18" height="8" rx="2" /><path d="M7 14h10v7H7z" /></svg>);
+export const Press = (p) => (<svg {...base} {...p}><rect x="5" y="3" width="14" height="5" rx="1.5" /><path d="M12 8v4" /><rect x="3" y="15" width="18" height="5" rx="1.5" /><path d="M7 12h10" /></svg>);
+export const Flame = (p) => (<svg {...base} {...p}><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1 2.6 2 3 0-3-1-5.5.5-8z" /></svg>);
+export const Layers = (p) => (<svg {...base} {...p}><path d="m12 3 9 5-9 5-9-5z" /><path d="m3 13 9 5 9-5" /></svg>);
+export const Badge = (p) => (<svg {...base} {...p}><circle cx="12" cy="9" r="6" /><path d="m9 14-2 7 5-3 5 3-2-7" /><path d="m9.5 9 1.7 1.7L14.5 7.5" /></svg>);
