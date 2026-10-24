@@ -8,6 +8,7 @@ export const site = {
   name: 'Digital Center Malta',
   shortName: 'DC Malta',
   tagline: 'xTool laser engravers & cutters, available locally in Malta',
+  url: 'https://dcmt.eu',
   defaultLanguage: 'en',
 
   // TODO: Only set this to true once you have WRITTEN confirmation from xTool
@@ -22,9 +23,8 @@ export const site = {
     // TODO: replace with your real address, then set addressIsPlaceholder: false
     address: 'Street name, Town, Malta',
     addressIsPlaceholder: true,
-    // TODO: confirm which days these hours apply to (e.g. 'Mon – Fri').
     openingHours: [
-      { days: 'Opening hours', hours: '09:00 – 17:00' },
+      { days: 'Mon – Fri', hours: '09:00 – 17:00' },
     ],
     // TODO: optional Google Maps link to your shop
     mapUrl: '',
