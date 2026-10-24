@@ -36,7 +36,6 @@ const productImages = {
     '/products/xtool-f2-ultra-uv-2.webp',
     '/products/xtool-f2-ultra-uv-3.webp',
     '/products/xtool-f2-ultra-uv-4.webp',
-    '/products/xtool-f2-ultra-uv-5.webp',
   ],
   'xtool-f2': [
     '/products/xtool-f2-1.webp',

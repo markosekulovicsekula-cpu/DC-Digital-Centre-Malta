@@ -43,9 +43,9 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__visual reveal reveal--delay">
-            <Link to="/products/xtool-f2-ultra-uv" className="hero__photo">
-              <img src="/products/xtool-f2-ultra-uv-5.webp" alt="xTool F2 Ultra UV engraving glassware in a workshop" width="1400" height="933" />
-              <span className="hero__photo-cap">xTool F2 Ultra UV <Arrow width={16} height={16} /></span>
+            <Link to="/products/xtool-m2" className="hero__photo">
+              <img src="/products/xtool-m2-4.webp" alt="Maker using the xTool M2 to personalise wooden boards, tumblers and coasters" width="1400" height="933" />
+              <span className="hero__photo-cap">xTool M2 <Arrow width={16} height={16} /></span>
             </Link>
           </div>
         </div>
