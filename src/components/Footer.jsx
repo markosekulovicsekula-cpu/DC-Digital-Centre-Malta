@@ -41,7 +41,10 @@ export default function Footer() {
           <ul>
             <li><a href={contact.phoneHref}>{contact.phone}</a></li>
             <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-            <li>{contact.address} {contact.addressIsPlaceholder && <PlaceholderTag />}</li>
+            <li>
+              {contact.mapUrl ? <a href={contact.mapUrl} target="_blank" rel="noopener noreferrer">{contact.address}</a> : contact.address}{' '}
+              {contact.addressIsPlaceholder && <PlaceholderTag />}
+            </li>
           </ul>
         </address>
       </div>

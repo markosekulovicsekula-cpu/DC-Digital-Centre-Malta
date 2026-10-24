@@ -20,14 +20,12 @@ export const site = {
     phone: '+356 9947 1937',
     phoneHref: 'tel:+35699471937',
     email: 'info@dcmt.eu',
-    // TODO: replace with your real address, then set addressIsPlaceholder: false
-    address: 'Street name, Town, Malta',
-    addressIsPlaceholder: true,
+    address: '12, Triq il-Frangiskani, Msida MSD 1120, Malta',
+    addressIsPlaceholder: false,
     openingHours: [
       { days: 'Mon – Fri', hours: '09:00 – 17:00' },
     ],
-    // TODO: optional Google Maps link to your shop
-    mapUrl: '',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=12+Triq+il-Frangiskani+Msida+MSD+1120+Malta',
   },
 
   // Social profiles are not active yet. Add the URL when each one goes live;

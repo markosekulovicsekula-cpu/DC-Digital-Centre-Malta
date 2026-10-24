@@ -46,7 +46,7 @@ export default function About() {
             <h2>At a glance <PlaceholderTag /></h2>
             {/* TODO: replace with real facts (year founded, location, team, etc.) */}
             <dl>
-              <div><dt>Based in</dt><dd>Malta</dd></div>
+              <div><dt>Based in</dt><dd>Msida, Malta</dd></div>
               <div><dt>Products</dt><dd>xTool machines & accessories</dd></div>
               <div><dt>Founded</dt><dd>[YEAR]</dd></div>
               <div><dt>Showroom</dt><dd>[Yes / By appointment / No]</dd></div>
