@@ -17,10 +17,10 @@ const reasons = [
 ];
 
 const uses = [
-  { title: 'Engraving', text: 'Names, logos and patterns on wood, leather, slate, coated metal and more.', className: 'use--engrave' },
-  { title: 'Cutting', text: 'Clean shapes from plywood, acrylic, card and fabric for signs, models and decor.', className: 'use--cut' },
-  { title: 'Personalised gifts', text: 'Custom keyrings, tumblers, jewellery and keepsakes made to order.', className: 'use--gift' },
-  { title: 'Small-batch products', text: 'Branded packaging, tags and merchandise for small businesses.', className: 'use--batch' },
+  { title: 'Engraving & marking', text: 'Glass, metal, wood and leather — from fine UV marking to deep engraving.', img: '/products/xtool-f2-ultra-uv-3.webp', to: '/products?category=lasers' },
+  { title: 'Cutting', text: 'Clean shapes from plywood, acrylic, card and fabric for signs, models and decor.', img: '/products/xtool-p3-4.webp', to: '/products/xtool-p3' },
+  { title: 'Printing & apparel', text: 'UV printing on objects and DTF transfers for T-shirts and merchandise.', img: '/products/xtool-o1-6.webp', to: '/products?category=printers' },
+  { title: 'Metal fabrication', text: 'Laser welding, cutting and cleaning for metal workshops.', img: '/products/xtool-metalfab-welder-cutter-7.webp', to: '/products?category=metalfab' },
 ];
 
 export default function Home() {
@@ -42,25 +42,11 @@ export default function Home() {
               <Link to="/contact" className="btn btn--outline-light btn--lg">{t('home.ctaQuote')}</Link>
             </div>
           </div>
-          <div className="hero__visual reveal reveal--delay" aria-hidden="true">
-            <div className="hero__panel">
-              <svg viewBox="0 0 320 260">
-                <defs>
-                  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stopColor="#ff8a4c" stopOpacity="0" />
-                    <stop offset="1" stopColor="#ff6b2c" />
-                  </linearGradient>
-                </defs>
-                <rect x="40" y="30" width="240" height="16" rx="4" className="hv-rail" />
-                <g className="hv-head">
-                  <rect x="140" y="40" width="40" height="34" rx="6" className="hv-module" />
-                  <rect x="157" y="74" width="6" height="128" fill="url(#beam)" className="hv-beam" />
-                </g>
-                <rect x="30" y="200" width="260" height="34" rx="6" className="hv-bed" />
-                <path d="M70 217 h180" className="hv-trace" />
-              </svg>
-              <p className="hero__panel-cap">Laser engraving & cutting</p>
-            </div>
+          <div className="hero__visual reveal reveal--delay">
+            <Link to="/products/xtool-f2-ultra-uv" className="hero__photo">
+              <img src="/products/xtool-f2-ultra-uv-5.webp" alt="xTool F2 Ultra UV engraving glassware in a workshop" width="1400" height="933" />
+              <span className="hero__photo-cap">xTool F2 Ultra UV <Arrow width={16} height={16} /></span>
+            </Link>
           </div>
         </div>
       </section>
@@ -72,7 +58,7 @@ export default function Home() {
             <Link to="/products" className="link-arrow">{t('common.viewAll')} <Arrow width={16} height={16} /></Link>
           </div>
           <ul className="cat-grid">
-            {categories.map((c) => (
+            {categories.filter((c) => c.id !== 'retail').map((c) => (
               <li key={c.id}>
                 <Link to={`/products?category=${c.id}`} className={`cat-card cat-card--${c.id}`}>
                   <span className="cat-card__icon">{(() => { const Icon = categoryIcons[c.id] ?? Box; return <Icon width={28} height={28} />; })()}</span>
@@ -83,6 +69,20 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="section section--tight" aria-labelledby="retail-title">
+        <div className="container">
+          <Link to="/products?category=retail" className="retail-band">
+            <img src="/products/xtool-retail-studio-1.webp" alt="" loading="lazy" />
+            <div className="retail-band__body">
+              <p className="eyebrow">For shops & brands</p>
+              <h2 id="retail-title">In-store personalisation with xTool Retail Studio</h2>
+              <p>Self-service kiosks, demo stations and machines that let your customers personalise products on the spot.</p>
+              <span className="link-arrow link-arrow--light">See retail solutions <Arrow width={16} height={16} /></span>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -119,10 +119,12 @@ export default function Home() {
           <p className="section__lead">{t('home.useLead')}</p>
           <ul className="use-grid">
             {uses.map((u) => (
-              <li key={u.title} className={`use-card ${u.className}`}>
-                <div className="use-card__art" aria-hidden="true" />
-                <h3>{u.title}</h3>
-                <p>{u.text}</p>
+              <li key={u.title} className="use-card">
+                <Link to={u.to} className="use-card__link">
+                  <img className="use-card__img" src={u.img} alt="" loading="lazy" />
+                  <h3>{u.title}</h3>
+                  <p>{u.text}</p>
+                </Link>
               </li>
             ))}
           </ul>

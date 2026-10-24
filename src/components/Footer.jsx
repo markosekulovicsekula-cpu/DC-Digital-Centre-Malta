@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <Logo />
+          <Logo variant="full" />
           <p>{site.tagline}</p>
           {socials.length > 0 && (
             <ul className="footer__social" aria-label="Social media">

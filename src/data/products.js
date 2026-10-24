@@ -7,14 +7,15 @@
 //  `officialUrl`.
 //
 //  How to edit:
-//   - Add images: put files in /public/products/ and list them in `images`,
-//     e.g. images: ['/products/p3-front.jpg']. Without images a neutral
-//     illustration is shown.
+//   - Images: see src/data/productImages.js. Products without photos show a
+//     neutral illustration.
 //   - Prices: leave `price: null` to show "Price on request". A number (EUR)
 //     would be displayed — currently no prices are published on purpose.
 //   - `featured: true` shows the product on the home page.
 //   - When xTool launches or retires a product, add/remove its entry here.
 // ============================================================================
+
+import productImages from './productImages.js';
 
 const XTOOL_EU = 'https://www.xtool.eu';
 const official = (handle) => (handle ? `${XTOOL_EU}/products/${handle}` : XTOOL_EU);
@@ -43,6 +44,12 @@ export const categories = [
     label: 'MetalFab laser welding',
     short: 'MetalFab',
     blurb: 'Laser welding, cutting and cleaning for metal workshops.',
+  },
+  {
+    id: 'retail',
+    label: 'In-store & retail solutions',
+    short: 'Retail',
+    blurb: 'xTool Retail Studio, self-service kiosks and demo stations for in-store personalisation.',
   },
   {
     id: 'accessories',
@@ -76,6 +83,10 @@ export const machineTypes = [
   { id: 'metalfab-acc', label: 'MetalFab accessories', category: 'metalfab' },
   { id: 'welding-safety', label: 'Welding safety', category: 'metalfab' },
 
+  { id: 'studio', label: 'Retail Studio', category: 'retail' },
+  { id: 'kiosk', label: 'Self-service kiosks', category: 'retail' },
+  { id: 'demo-station', label: 'Demo stations', category: 'retail' },
+
   { id: 'rotary', label: 'Rotary attachments', category: 'accessories' },
   { id: 'modules', label: 'Laser & print modules', category: 'accessories' },
   { id: 'air', label: 'Air purifiers & air assist', category: 'accessories' },
@@ -102,7 +113,7 @@ const item = (slug, name, category, type, short, specs, extra = {}) => ({
   specs: specs.map(([label, value]) => ({ label, value })),
   inTheBox: [],
   related: [],
-  images: [],
+  images: productImages[slug] ?? [],
   price: null,
   featured: false,
   specsVerified: true,
@@ -244,6 +255,10 @@ export const products = [
     'Compact heat press for T-shirts, HTV, sublimation and DTF transfers.',
     [['Type', 'Compact heat press'], ['Transfers', 'HTV, sublimation, DTF']],
     { handle: 'xtool-heat-press', related: ['xtool-apparel-printer-plus', 'xtool-wonderpress'] }),
+  item('xtool-hp2', 'xTool HP2 Heat Press', 'heat-presses', 'press',
+    'Automatic heat press with digital controls for apparel and flat transfers.',
+    [['Type', 'Automatic heat press'], ['Transfers', 'DTF, HTV, sublimation']],
+    { related: ['xtool-apparel-printer-plus', 'xtool-os1-shaker-oven', 'xtool-wonderpress'] }),
   item('xtool-os1-shaker-oven', 'xTool OS1 Automatic Shaker Oven', 'heat-presses', 'dtf-finish',
     'Automatic powder shaker and curing oven for DTF transfer production.',
     [['Type', 'DTF powder shaker + oven'], ['Works with', 'Apparel Printer / Plus']],
@@ -252,7 +267,7 @@ export const products = [
   // -------------------------------------------------------------- METALFAB
   item('xtool-metalfab-welder-cutter', 'xTool MetalFab Laser Welder & CNC Cutter', 'metalfab', 'welder',
     'Laser welding plus CNC metal cutting in one system for fabrication workshops.',
-    [['Functions', 'Laser welding, CNC cutting'], ['Options', 'Wire feeder, laser cleaning head']],
+    [['Functions', 'Laser welding, CNC cutting'], ['Versions', '800W or 1200W welder + CNC cutter'], ['Options', 'Wire feeder, laser cleaning head']],
     {
       handle: 'xtool-metalfab-laser-welder-and-cnc-cutter',
       featured: true,
@@ -261,7 +276,7 @@ export const products = [
     }),
   item('xtool-metalfab-welder', 'xTool MetalFab Laser Welder', 'metalfab', 'welder',
     'Handheld laser welder for clean, fast welds on metal parts.',
-    [['Function', 'Handheld laser welding'], ['Options', 'Wire feeder, laser cleaning head']],
+    [['Function', 'Handheld laser welding'], ['Versions', '800W, 1200W'], ['Options', 'Wire feeder, laser cleaning head']],
     { handle: 'xtool-metalfab-laser-welder', related: ['xtool-metalfab-wire-feeder', 'xtool-metalfab-maxclean', 'xtool-welding-helmet', 'xtool-welding-gloves'] }),
   item('xtool-metalfab-wire-feeder', 'Wire Feeder for MetalFab 1200W Laser Welder', 'metalfab', 'metalfab-acc',
     'Automatic filler-wire feeder for MetalFab laser welding.',
@@ -291,6 +306,35 @@ export const products = [
     'Long protective gloves for MetalFab laser welding.',
     [['Length', '35.5 cm (14 in)']],
     { handle: '14in-laser-welding-gloves' }),
+
+  // ---------------------------------------------------------------- RETAIL
+  item('xtool-retail-studio', 'xTool Retail Studio', 'retail', 'studio',
+    'Complete in-store personalisation setup: machines, software and services for retail stores.',
+    [['For', 'Shops, brands, pop-ups, events'], ['Includes', 'Machines, kiosk software, setup support']],
+    {
+      description: 'xTool Retail Studio brings on-the-spot personalisation into physical stores — engraving, printing and apparel customisation run from a compact station, with self-service kiosks for customers to design their own products. Contact us to plan a setup for your store or event.',
+      related: ['xtool-kiosk-floor', 'xtool-kiosk-desktop', 'xtool-kiosk-tablet', 'xtool-demo-station-basic', 'xtool-demo-station-apparel'],
+    }),
+  item('xtool-kiosk-floor', 'Self-Service Kiosk — Floor Standing', 'retail', 'kiosk',
+    'Floor-standing touchscreen kiosk where customers design their own personalised products.',
+    [['Format', 'Floor standing'], ['Use', 'Customer self-service design']],
+    { handle: 'self-service-kiosk-desktop-standing', related: ['xtool-retail-studio', 'xtool-kiosk-desktop', 'xtool-kiosk-tablet'] }),
+  item('xtool-kiosk-desktop', 'Self-Service Kiosk — Desktop Standing', 'retail', 'kiosk',
+    'Countertop touchscreen kiosk for customer self-service personalisation.',
+    [['Format', 'Desktop standing'], ['Use', 'Customer self-service design']],
+    { handle: 'self-service-kiosk-desktop-standing-1', related: ['xtool-retail-studio', 'xtool-kiosk-floor', 'xtool-kiosk-tablet'] }),
+  item('xtool-kiosk-tablet', 'Self-Service Kiosk — Tablet', 'retail', 'kiosk',
+    'Tablet version of the self-service kiosk for compact counters and events.',
+    [['Format', 'Tablet'], ['Use', 'Customer self-service design']],
+    { handle: 'self-service-kiosk-tablet', related: ['xtool-retail-studio', 'xtool-kiosk-floor', 'xtool-kiosk-desktop'] }),
+  item('xtool-demo-station-basic', 'Demo Station — Basic', 'retail', 'demo-station',
+    'Retail display station with a kiosk and personalisation machine for in-store demos.',
+    [['Format', 'Display table + kiosk'], ['Use', 'In-store engraving demos']],
+    { related: ['xtool-retail-studio', 'xtool-demo-station-apparel'] }),
+  item('xtool-demo-station-apparel', 'Demo Station — Apparel Specialty', 'retail', 'demo-station',
+    'Retail station built around apparel printing and heat pressing.',
+    [['Format', 'Display table + kiosk'], ['Use', 'In-store apparel customisation']],
+    { related: ['xtool-retail-studio', 'xtool-apparel-printer-plus', 'xtool-wonderpress'] }),
 
   // ----------------------------------------------------------- ACCESSORIES
   item('xtool-ra3', 'xTool RA3 & RA3 Lite Rotary', 'accessories', 'rotary',

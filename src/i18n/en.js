@@ -29,7 +29,7 @@ const en = {
   'home.whyTitle': 'Why buy from DC Digital Centre Malta',
   'home.useTitle': 'What you can make',
   'home.useLead':
-    'Typical applications of laser engravers and cutters. Illustrations are generic examples, not customer projects.',
+    'What xTool machines are used for. Photos: xTool.',
   'home.ctaBandTitle': 'Not sure which machine fits your work?',
   'home.ctaBandText': 'Tell us what you want to make and which materials you use — we will reply with suitable options.',
 
