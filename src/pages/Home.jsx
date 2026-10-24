@@ -10,8 +10,8 @@ const categoryIcons = { lasers: Laser, printers: Printer, 'heat-presses': Press,
 // Keep these points factual — do not add warranty, delivery or support
 // promises that have not been confirmed.
 const reasons = [
-  { icon: Badge, title: 'Official xTool partner', text: 'xTool machines and accessories from a partner based in Msida.' },
-  { icon: Store, title: 'Demo room in Msida', text: 'See the machines working and test your own materials before you buy.' },
+  { icon: Badge, title: 'Official xTool partner', text: 'xTool machines and accessories from a partner based in Malta.' },
+  { icon: Store, title: 'Demo room in Malta', text: 'See the machines working and test your own materials before you buy.' },
   { icon: Compare, title: 'Help choosing', text: 'Tell us your materials and projects and we will suggest the right machine and accessories.' },
   { icon: Wrench, title: 'Service & repairs', text: 'We service large-format printers, laser machines, CNC machines and 3D printers.' },
 ];
