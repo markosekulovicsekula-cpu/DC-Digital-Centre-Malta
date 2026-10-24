@@ -17,7 +17,7 @@ Hosting note: this is a single-page app, so the host must serve `index.html` for
 |---|---|
 | Address and map link (then set `addressIsPlaceholder: false`) | `src/config/site.js` → `contact` |
 | Social media links (empty = hidden) | `src/config/site.js` → `social` |
-| Form backend URL (empty = demo mode, nothing is sent) | `src/config/site.js` → `formEndpoint` |
+| Form backend (`netlify`, `endpoint` or `demo`) | `src/config/site.js` → `formProvider` |
 | Authorised-reseller status (only `true` with written confirmation from xTool) | `src/config/site.js` → `authorisedResellerConfirmed` |
 | Products, descriptions, specs, packing list, prices, related items | `src/data/products.js` (set `specsVerified: true` once checked) |
 | Product images (files in `public/products/`, paths in `images`) | `src/data/products.js` |
@@ -33,3 +33,7 @@ Copy `src/i18n/en.js` to e.g. `mt.js` or `sr.js`, translate the values, and regi
 The site URL is set in `src/config/site.js` (`url`) and used for canonical links, Open Graph tags,
 `public/robots.txt` and `public/sitemap.xml` (regenerated on every `npm run build`).
 `netlify.toml` holds the Netlify build settings and the single-page-app redirect.
+
+## Enquiry form (Netlify Forms)
+Submissions go to Netlify → your site → **Forms → enquiry**. Email alerts: **Site configuration →
+Notifications → Emails and webhooks → Form submission notifications → Add notification → Email**.

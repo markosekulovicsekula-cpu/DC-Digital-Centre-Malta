@@ -5,12 +5,32 @@ import { useI18n } from '../i18n/index.jsx';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+// The static preview build (npm run build:preview) is never hosted on Netlify,
+// so it always runs in demo mode.
+const PROVIDER = import.meta.env.VITE_HASH_ROUTER ? 'demo' : site.formProvider;
+
+function send(values, botField) {
+  if (PROVIDER === 'netlify') {
+    return fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': site.formName, 'bot-field': botField, ...values }).toString(),
+    });
+  }
+  return fetch(site.formEndpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(values),
+  });
+}
+
 export default function EnquiryForm({ defaultProduct = '', compact = false }) {
   const { t } = useI18n();
   const id = useId();
   const [values, setValues] = useState({ name: '', email: '', product: defaultProduct, message: '' });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | demo | sent | error
+  const [botField, setBotField] = useState(''); // spam honeypot, hidden from people
 
   const update = (e) => {
     const { name, value } = e.target;
@@ -35,17 +55,13 @@ export default function EnquiryForm({ defaultProduct = '', compact = false }) {
       document.getElementById(`${id}-${Object.keys(er)[0]}`)?.focus();
       return;
     }
-    if (!site.formEndpoint) {
+    if (PROVIDER === 'demo' || (PROVIDER === 'endpoint' && !site.formEndpoint)) {
       setStatus('demo');
       return;
     }
     setStatus('sending');
     try {
-      const res = await fetch(site.formEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(values),
-      });
+      const res = await send(values, botField);
       if (!res.ok) throw new Error(String(res.status));
       setStatus('sent');
       setValues({ name: '', email: '', product: defaultProduct, message: '' });
@@ -67,8 +83,11 @@ export default function EnquiryForm({ defaultProduct = '', compact = false }) {
     errors[name] ? <p className="field__err" id={`${id}-${name}-err`}>{errors[name]}</p> : null;
 
   return (
-    <form className={`form ${compact ? 'form--compact' : ''}`} onSubmit={onSubmit} noValidate>
-      {!site.formEndpoint && (
+    <form className={`form ${compact ? 'form--compact' : ''}`} name={site.formName} onSubmit={onSubmit} noValidate>
+      <p className="sr-only" aria-hidden="true">
+        <label>Leave this field empty <input name="bot-field" tabIndex={-1} autoComplete="off" value={botField} onChange={(e) => setBotField(e.target.value)} /></label>
+      </p>
+      {PROVIDER === 'demo' && (
         <p className="form__demo-note">
           <strong>Demo form.</strong> Nothing is sent until a form backend is configured.
         </p>

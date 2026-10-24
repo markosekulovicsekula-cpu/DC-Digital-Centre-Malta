@@ -19,6 +19,15 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Netlify Forms: static copy of the enquiry form so Netlify detects it at deploy time.
+         Keep the name and field names in sync with src/components/EnquiryForm.jsx. -->
+    <form name="enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="product" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

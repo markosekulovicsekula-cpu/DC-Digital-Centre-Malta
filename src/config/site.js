@@ -37,9 +37,13 @@ export const site = {
     youtube: '',
   },
 
-  // TODO: form backend. Leave empty to keep the form in DEMO mode
-  // (validates input but does not send anything).
-  // Example services: Formspree, Web3Forms, Netlify Forms, your own API.
+  // Enquiry form backend:
+  //  'netlify' – Netlify Forms (the hidden form in index.html must keep the same
+  //              name and fields). Submissions appear in Netlify → Forms.
+  //  'endpoint' – POST JSON to formEndpoint (e.g. Formspree, your own API).
+  //  'demo'    – validate only, nothing is sent.
+  formProvider: 'netlify',
+  formName: 'enquiry',
   formEndpoint: '',
 
   // Official manufacturer site – used for "official specifications" links.

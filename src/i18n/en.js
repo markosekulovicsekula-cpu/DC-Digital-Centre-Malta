@@ -71,7 +71,7 @@ const en = {
   'form.err.message': 'Please write a message (at least 10 characters).',
   'form.demoTitle': 'Demo mode — your enquiry was NOT sent.',
   'form.demoText':
-    'The form validated correctly, but no form backend is configured yet. Set formEndpoint in src/config/site.js to start receiving enquiries.',
+    'The form validated correctly, but no form backend is configured yet. Set formProvider in src/config/site.js to start receiving enquiries.',
   'form.sentTitle': 'Thank you — your enquiry was sent.',
   'form.sentText': 'We will get back to you as soon as possible.',
   'form.errorTitle': 'Sending failed.',
