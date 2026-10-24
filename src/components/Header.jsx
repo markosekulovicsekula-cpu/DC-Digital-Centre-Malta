@@ -28,7 +28,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <a href="#main" className="skip-link" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('nav.skip')}</a>
       <div className="container header__inner">
-        <Link to="/" className="header__brand" aria-label="Digital Center Malta – home">
+        <Link to="/" className="header__brand" aria-label="DC Digital Centre Malta – home">
           <Logo />
         </Link>
         <button

@@ -24,7 +24,7 @@ const uses = [
 
 export default function Home() {
   const { t } = useI18n();
-  useSeo(null, 'Digital Center Malta – local seller of xTool laser engravers, cutters and accessories in Malta. Browse products and request a quote.');
+  useSeo(null, 'DC Digital Centre Malta – local seller of xTool laser engravers, cutters and accessories in Malta. Browse products and request a quote.');
   const featured = products.filter((p) => p.featured);
 
   return (

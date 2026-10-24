@@ -10,7 +10,7 @@ export default function Logo() {
         <circle cx="46" cy="18" r="4" />
       </svg>
       <span className="logo__text">
-        <strong>Digital Center</strong>
+        <strong>DC Digital Centre</strong>
         <small>Malta</small>
       </span>
       <span className="sr-only">{site.name}</span>

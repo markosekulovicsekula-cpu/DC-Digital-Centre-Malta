@@ -8,7 +8,7 @@ import { Search } from '../components/Icons.jsx';
 
 export default function Products() {
   const { t } = useI18n();
-  useSeo('xTool Products', 'Browse xTool laser engravers, CO₂ laser cutters, portable lasers and accessories available from Digital Center Malta.');
+  useSeo('xTool Products', 'Browse xTool laser engravers, CO₂ laser cutters, portable lasers and accessories available from DC Digital Centre Malta.');
   const [params, setParams] = useSearchParams();
   const q = params.get('q') ?? '';
   const category = params.get('category') ?? '';

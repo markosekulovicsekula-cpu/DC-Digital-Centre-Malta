@@ -9,7 +9,7 @@ import { Clock, Mail, Phone, Pin } from '../components/Icons.jsx';
 
 export default function Contact() {
   const { t } = useI18n();
-  useSeo('Contact & quotes', 'Contact Digital Center Malta for xTool product quotes, advice and availability in Malta.');
+  useSeo('Contact & quotes', 'Contact DC Digital Centre Malta for xTool product quotes, advice and availability in Malta.');
   const [params] = useSearchParams();
   const productSlug = getProduct(params.get('product') ?? '') ? params.get('product') : '';
   const { contact } = site;

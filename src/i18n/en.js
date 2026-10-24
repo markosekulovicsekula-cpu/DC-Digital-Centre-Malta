@@ -21,12 +21,12 @@ const en = {
   'home.eyebrow': 'xTool products in Malta',
   'home.title': 'Make, mark and cut — with xTool, from a local Maltese shop.',
   'home.lead':
-    'Digital Center Malta helps makers, studios and small businesses in Malta choose the right xTool laser engraver, cutter or accessory, and talk to someone local before they buy.',
+    'DC Digital Centre Malta helps makers, studios and small businesses in Malta choose the right xTool laser engraver, cutter or accessory, and talk to someone local before they buy.',
   'home.ctaProducts': 'View products',
   'home.ctaQuote': 'Request a quote',
   'home.categoriesTitle': 'Shop by category',
   'home.featuredTitle': 'Featured machines',
-  'home.whyTitle': 'Why buy from Digital Center Malta',
+  'home.whyTitle': 'Why buy from DC Digital Centre Malta',
   'home.useTitle': 'What you can make',
   'home.useLead':
     'Typical applications of laser engravers and cutters. Illustrations are generic examples, not customer projects.',
@@ -55,7 +55,7 @@ const en = {
   'product.verifyNote':
     'Specifications on this page are a summary to be verified. Always confirm against official xTool documentation.',
 
-  'about.title': 'About Digital Center Malta',
+  'about.title': 'About DC Digital Centre Malta',
   'contact.title': 'Contact us',
   'contact.lead': 'Ask for a quote, product advice or availability. We reply by email or phone.',
 
@@ -79,9 +79,9 @@ const en = {
   'form.sending': 'Sending…',
 
   'footer.disclaimer':
-    'xTool and related product names are trademarks of their respective owner. Digital Center Malta is an independent seller of xTool products.',
+    'xTool and related product names are trademarks of their respective owner. DC Digital Centre Malta is an independent seller of xTool products.',
   'footer.disclaimerAuthorised':
-    'xTool and related product names are trademarks of their respective owner. Digital Center Malta is an authorised xTool reseller.',
+    'xTool and related product names are trademarks of their respective owner. DC Digital Centre Malta is an authorised xTool reseller.',
 };
 
 export default en;

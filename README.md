@@ -1,4 +1,4 @@
-# Digital Center Malta — xTool products website
+# DC Digital Centre Malta — xTool products website
 
 React 18 + Vite + React Router. English by default, ready for more languages.
 

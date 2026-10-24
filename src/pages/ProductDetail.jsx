@@ -19,7 +19,7 @@ export default function ProductDetail() {
 
 function ProductView({ product }) {
   const { t } = useI18n();
-  useSeo(product.name, `${product.name} available from Digital Center Malta. ${product.short}`);
+  useSeo(product.name, `${product.name} available from DC Digital Centre Malta. ${product.short}`);
   const [active, setActive] = useState(0);
   const related = product.related.map(getProduct).filter(Boolean);
   const imageCount = Math.max(product.images.length, 1);

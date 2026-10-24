@@ -5,7 +5,7 @@
 // ============================================================================
 
 export const site = {
-  name: 'Digital Center Malta',
+  name: 'DC Digital Centre Malta',
   shortName: 'DC Malta',
   tagline: 'xTool laser engravers & cutters, available locally in Malta',
   url: 'https://dcmt.eu',
