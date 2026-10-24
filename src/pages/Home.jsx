@@ -17,10 +17,10 @@ const reasons = [
 ];
 
 const uses = [
-  { title: 'Engraving & marking', text: 'Glass, metal, wood and leather — from fine UV marking to deep engraving.', img: '/products/xtool-f2-ultra-uv-3.webp', to: '/products?category=lasers' },
-  { title: 'Cutting', text: 'Clean shapes from plywood, acrylic, card and fabric for signs, models and decor.', img: '/products/xtool-p3-4.webp', to: '/products/xtool-p3' },
-  { title: 'Printing & apparel', text: 'UV printing on objects and DTF transfers for T-shirts and merchandise.', img: '/products/xtool-o1-6.webp', to: '/products?category=printers' },
-  { title: 'Metal fabrication', text: 'Laser welding and CNC metal cutting for workshops.', img: '/products/xtool-metalfab-welder-cutter-7.webp', to: '/products?category=metalfab' },
+  { title: 'Engraving & marking', img: '/products/xtool-f2-ultra-uv-3.webp', to: '/products?category=lasers' },
+  { title: 'Cutting', img: '/products/xtool-p3-4.webp', to: '/products/xtool-p3' },
+  { title: 'Printing & apparel', img: '/products/xtool-o1-6.webp', to: '/products?category=printers' },
+  { title: 'Metal fabrication', img: '/products/xtool-metalfab-welder-cutter-7.webp', to: '/products?category=metalfab' },
 ];
 
 export default function Home() {
@@ -116,14 +116,12 @@ export default function Home() {
       <section className="section section--dark" aria-labelledby="use-title">
         <div className="container">
           <h2 id="use-title" className="section__title">{t('home.useTitle')}</h2>
-          <p className="section__lead">{t('home.useLead')}</p>
           <ul className="use-grid">
             {uses.map((u) => (
               <li key={u.title} className="use-card">
                 <Link to={u.to} className="use-card__link">
                   <img className="use-card__img" src={u.img} alt="" loading="lazy" />
                   <h3>{u.title}</h3>
-                  <p>{u.text}</p>
                 </Link>
               </li>
             ))}
